@@ -9,7 +9,7 @@ About r-distrex
 
 Home: http://distr.r-forge.r-project.org/
 
-Package license: LGPL-3
+Package license: LGPL-3.0-only
 
 Summary: Extends package 'distr' by functionals, distances, and conditional distributions.
 
@@ -18,7 +18,7 @@ About r-distrex
 
 Home: http://distr.r-forge.r-project.org/
 
-Package license: LGPL-3
+Package license: LGPL-3.0-only
 
 Summary: Extends package 'distr' by functionals, distances, and conditional distributions.
 
