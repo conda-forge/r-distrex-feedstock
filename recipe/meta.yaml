@@ -1,4 +1,4 @@
-{% set version = "2.9.0" %}
+{% set version = "2.9.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,18 +10,18 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/distrEx_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/distrEx/distrEx_{{ version }}.tar.gz
-  sha256: 087d1847ad400141b5e0fd0858ef3e5c698b3018d7e2d33087be601a5740fb35
+  sha256: d06bcaa1ccb52ef775f7c8b2d6d4676408dbc2813dfc128da34ffa4c7740f3e4
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
@@ -45,10 +45,11 @@ test:
 
 about:
   home: http://distr.r-forge.r-project.org/
-  license: LGPL-3
+  license: LGPL-3.0-only
   summary: Extends package 'distr' by functionals, distances, and conditional distributions.
   license_family: LGPL
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-3
 
 extra:
   recipe-maintainers:
