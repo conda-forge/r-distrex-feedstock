@@ -1,6 +1,5 @@
 {% set version = "2.9.2" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-distrex
@@ -13,8 +12,7 @@ source:
   sha256: d06bcaa1ccb52ef775f7c8b2d6d4676408dbc2813dfc128da34ffa4c7740f3e4
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -34,7 +34,6 @@ requirements:
     - r-startupmsg
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-distr >=2.8.0
     - r-startupmsg
 
