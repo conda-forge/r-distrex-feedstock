@@ -1,4 +1,4 @@
-{% set version = "2.9.5" %}
+{% set version = "2.9.6" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/distrEx_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/distrEx/distrEx_{{ version }}.tar.gz
-  sha256: e02179915dcbea363df13066f70d593258dfe0001b76fd870de7e89c6805bcff
+  sha256: e4f0f245ebbe19f5c98cc7a562d1facad455ccd7c4f260281c36cc800b67a061
 
 build:
   number: 0
